@@ -1,3 +1,39 @@
 @import "flat-ui.less";
 
 @import "content.less";
+@import "card.less";
+
+
+body {
+	margin:0px;
+	padding:0px;
+}
+
+.navbar {
+
+	margin-bottom: 0px;
+
+	.container {
+		padding:0px 10px;
+	}
+
+	a {
+		&:hover, &:focus {
+			background:@base;
+		}
+	}
+	.logo {
+		position: absolute;
+		left:12px;
+		top: 12px;
+
+		a {
+			text-decoration: none;
+		}
+	}
+	.logo img {
+		height:40px;
+	}
+
+}
+

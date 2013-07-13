@@ -10,7 +10,6 @@
   line-height: 100px;
 
   .logo {
-    background: url(../images/demo/logo-mask.png) center 0 no-repeat;
     background-size: 256px 186px;
     height: 186px;
     margin: 0 auto 26px;
@@ -25,7 +24,7 @@
     font-weight: 700;
     letter-spacing: -1px;
     padding-top: 5px;
-  }  
+  }
 }
 // Panels delimiter
 .demo-row {
@@ -39,7 +38,7 @@
     color: mix(@base, @inverse, 66%);
     font-size: inherit;
     font-weight: 400;
-  }  
+  }
 }
 // Shift blocks to fit design
 .demo-navigation {
@@ -57,7 +56,7 @@
     left: -8px !important;
     position: relative !important;
     top: -8px !important;
-  }  
+  }
 }
 .demo-headings {
   margin-bottom: 12px;
@@ -72,13 +71,13 @@
 
   .demo-content {
     margin: 0 0 0 -36px;
-    
+
     > span {
       display: inline-block;
       margin: 0 0 32px 36px;
       width: 24px;
       font-size: 24px;
-    }  
+    }
   }
 }
 
@@ -121,7 +120,7 @@
 .demo-samples {
   margin-bottom: 46px;
 }
-.demo-video {  
+.demo-video {
   padding-top: 95px;
   .border-radius(6px);
 }
@@ -133,10 +132,10 @@
 
   [class*='fui-'] {
     margin: 3px 0 -3px;
-  }  
+  }
 }
 .demo-download {
-  background-color: mix(@base, @inverse, 10%);  
+  background-color: mix(@base, @inverse, 10%);
   height: 120px;
   margin: 0 auto 32px;
   padding: 40px 28px 30px 32px;
@@ -147,7 +146,7 @@
   img {
     height: 104px;
     width: 82px;
-  }  
+  }
 }
 .demo-download-text {
   font-size: 15px;
@@ -157,15 +156,9 @@
 .demo-text-box {
   a:hover {
     color: @firm;
-  }  
+  }
 }
 .demo-browser {
-  background: mix(@base, black, 85%) url(../images/demo/browser.png) 0 0 no-repeat;
-  background-size: 659px 42px;  
-  color: @inverse;
-  margin: 0 41px 140px 0;
-  padding-top: 42px;
-  .border-radius(0 0 6px 6px);
 }
 .demo-browser-side {
   float: left;
@@ -182,10 +175,10 @@
     line-height: 18px;
     margin-top: 3px;
     text-transform: none;
-  }  
+  }
 }
 .demo-browser-author {
-  background: url(../images/demo/browser-author.jpg) center center no-repeat;
+//  background: url(../images/demo/browser-author.jpg) center center no-repeat;
   border: 3px solid @inverse;
   display: block;
   height: 84px;
@@ -211,11 +204,10 @@
       position: relative;
       top: 1px;
       -webkit-font-smoothing: antialiased;
-    }  
-  }    
+    }
+  }
 }
 .demo-browser-content {
-  background-color: @base;  
   overflow: hidden;
   padding: 21px 0 0 20px;
   .border-radius(0 0 6px);
@@ -225,14 +217,6 @@
     float: left;
     margin: 0 15px 20px 0;
     width: 134px;
-  }  
-}
-// Serving 2x images
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
-  .logo {
-    background-image: url(../images/demo/logo-mask-2x.png)
   }
-  .demo-browser {
-    background-image: url(../images/demo/browser-2x.png)
-  }  
 }
+

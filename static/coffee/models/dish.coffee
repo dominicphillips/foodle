@@ -1,0 +1,1 @@
+App.Dish = Backbone.Model.extend()

@@ -10,6 +10,9 @@ App.AppView = App.BaseView.extend
 		if target.hasClass('pass')
 			return
 		e.preventDefault()
+
+		$('.navigation').collapse()
+
 		href = target.attr('href')
 		App.router.navigate(href, true)
 

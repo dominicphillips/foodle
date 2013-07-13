@@ -23,7 +23,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/dishes/')
+@app.route('/api/dishes/')
 def retrieve_dishes():
     dishes = col_dishes.find().limit(5)
     items = []

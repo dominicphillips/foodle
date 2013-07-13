@@ -191,7 +191,6 @@ you can use the generic selector below, but it's slower:
   line-height: 100px;
 }
 .demo-logo .logo {
-  background: url(../images/demo/logo-mask.png) center 0 no-repeat;
   background-size: 256px 186px;
   height: 186px;
   margin: 0 auto 26px;
@@ -332,16 +331,6 @@ you can use the generic selector below, but it's slower:
 .demo-text-box a:hover {
   color: #2c3e50;
 }
-.demo-browser {
-  background: #2c3e50 url(../images/demo/browser.png) 0 0 no-repeat;
-  background-size: 659px 42px;
-  color: #ffffff;
-  margin: 0 41px 140px 0;
-  padding-top: 42px;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-}
 .demo-browser-side {
   float: left;
   padding: 22px 20px;
@@ -359,7 +348,6 @@ you can use the generic selector below, but it's slower:
   text-transform: none;
 }
 .demo-browser-author {
-  background: url(../images/demo/browser-author.jpg) center center no-repeat;
   border: 3px solid #ffffff;
   display: block;
   height: 84px;
@@ -391,7 +379,6 @@ you can use the generic selector below, but it's slower:
   -webkit-font-smoothing: antialiased;
 }
 .demo-browser-content {
-  background-color: #34495e;
   overflow: hidden;
   padding: 21px 0 0 20px;
   -webkit-border-radius: 0 0 6px;
@@ -403,14 +390,6 @@ you can use the generic selector below, but it's slower:
   float: left;
   margin: 0 15px 20px 0;
   width: 134px;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
-  .logo {
-    background-image: url(../images/demo/logo-mask-2x.png);
-  }
-  .demo-browser {
-    background-image: url(../images/demo/browser-2x.png);
-  }
 }
 body {
   color: #34495e;
@@ -3852,6 +3831,67 @@ body.vjs-full-window {
 .mal {
   margin-left: 20px;
 }
-#content {
-  margin-top: 50px;
+.dish {
+  position: relative;
+}
+.dish .image-container {
+  max-height: 400px;
+  overflow: hidden;
+}
+.dish .toolbar {
+  height: 200px;
+  background: #95a5a6;
+}
+.dish-navigation {
+  text-align: center;
+  font-weight: 100;
+  color: #fff;
+  position: relative;
+  background: #2c3e50;
+  padding: 20px 0px;
+}
+.dish-navigation small {
+  color: #95a5a6;
+}
+.dish-navigation p {
+  margin: 0px;
+  font-weight: normal;
+}
+.dish-navigation span {
+  display: block;
+  color: #95a5a6;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 50px;
+  top: 2px;
+  background: #34495e;
+  position: absolute;
+}
+.dish-navigation .right {
+  right: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar .container {
+  padding: 0px 10px;
+}
+.navbar a:hover,
+.navbar a:focus {
+  background: #34495e;
+}
+.navbar .logo {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+.navbar .logo a {
+  text-decoration: none;
+}
+.navbar .logo img {
+  height: 40px;
 }

@@ -11,6 +11,7 @@ App.AppView = App.BaseView.extend({
       return;
     }
     e.preventDefault();
+    $('.navigation').collapse();
     href = target.attr('href');
     return App.router.navigate(href, true);
   },
