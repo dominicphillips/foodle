@@ -1,0 +1,2 @@
+[MongoDB]
+url = mongodb://<user>:<password>@dharma.mongohq.com:10073/foodle
