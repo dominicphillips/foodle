@@ -16,7 +16,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"span12\">\n          <div class=\"demo-browser\">\n            <div class=\"demo-browser-side\">\n              <div class=\"demo-browser-author\">\n\n\n                  <img src=\"/static/img/face.jpg\" alt=\"\">\n\n\n              </div>\n              <div class=\"demo-browser-action\">\n                <a class=\"btn btn-danger btn-large btn-block\" href=\"http://twitter.com/monstercritic\" target=\"_blank\">\n                  Follow\n                </a>\n              </div>\n              <h5>@dom</h5>\n              <h6>\n                Software Engineer, Munich\n              </h6>\n            </div>\n            <div class=\"demo-browser-content\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n\n            </div>\n          </div>\n        </div>";
+  return "<div class=\"span12\">\n          <div class=\"demo-browser\">\n            <div class=\"demo-browser-side\">\n              <div class=\"demo-browser-author\">\n\n\n                  <img src=\"/static/img/face.jpg\" alt=\"\">\n\n\n              </div>\n              <div class=\"demo-browser-action\">\n                <a class=\"btn btn-danger btn-large btn-block\" href=\"http://twitter.com/monstercritic\" target=\"_blank\">\n                  Edit\n                </a>\n              </div>\n              <h5>@dom</h5>\n              <h6>\n                Software Engineer, Munich\n              </h6>\n            </div>\n            <div class=\"demo-browser-content\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n              <img src=\"/static/img/bento.jpg\" alt=\"\">\n\n            </div>\n          </div>\n        </div>";
   });
 
 this["App"]["templates"]["account/register"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -31,10 +31,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["App"]["templates"]["dishes/dish"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "    <div class=\"dish\">\n        <div class=\"image-container\">\n          <img src=\"/static/img/bento.jpg\" alt=\"\">\n        </div>\n\n        <div class=\"toolbar\">\n\n        </div>\n    </div>";
+  buffer += "\n		    <div class=\"dish\">\n        <div class=\"image-container\">\n        	<a href=\"/dishes/";
+  if (stack1 = helpers._id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0._id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        		<img src=\"/static/img/bento.jpg\" alt=\"\">\n        	</a>\n\n        </div>\n    	<div class=\"dish-navigation\">\n\n    	    <span class=\"right pass\"  href=\"#dishes-car\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n    	    <span class=\"left pass\"  href=\"#dishes-car\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n    	    <p>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-location\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-heart\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"icon-star\"></div>\n		          </div>\n		        </div>\n\n\n		        </div>\n		      </div>\n\n\n\n\n        </div>\n    </div>\n\n";
+  return buffer;
   });
 
 this["App"]["templates"]["error/404"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -52,5 +61,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "\n\n   <div id=\"dishes\"></div>\n\n	<div id=\"myCarousel\" class=\"carousel slide\">\n\n	  <!-- Carousel items -->\n	  <div class=\"carousel-inner\">\n	    <div class=\"active item\">\n			<div class=\"dish\">\n			    <div class=\"image-container\">\n			      <img src=\"/static/img/bento.jpg\" alt=\"\">\n			    </div>\n				<div class=\"dish-navigation\">\n\n				    <span class=\"right pass\"  href=\"#myCarousel\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n				    <span class=\"left pass\"  href=\"#myCarousel\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n				    <p>Dish Name</p><small>with mixed Salad</small>\n\n				</div>\n			    <div class=\"toolbar\">\n\n			    </div>\n			</div>\n\n\n	    </div>\n	    <div class=\"item\">\n		<div class=\"dish\">\n		    <div class=\"image-container\">\n		      <img src=\"/static/img/bento.jpg\" alt=\"\">\n		    </div>\n			<div class=\"dish-navigation\">\n\n			    <span class=\"right pass\"  href=\"#myCarousel\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n			    <span class=\"left pass\"  href=\"#myCarousel\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n			    <p>Dish Name</p><small>with mixed Salad</small>\n\n			</div>\n		    <div class=\"toolbar\">\n\n		    </div>\n		</div>\n	    </div>\n	    <div class=\"item\">\n			<div class=\"dish\">\n			    <div class=\"image-container\">\n			      <img src=\"/static/img/bento.jpg\" alt=\"\">\n			    </div>\n				<div class=\"dish-navigation\">\n\n				    <span class=\"right pass\"  href=\"#myCarousel\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n				    <span class=\"left pass\"  href=\"#myCarousel\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n				    <p>Dish Name</p><small>with mixed Salad</small>\n\n				</div>\n			    <div class=\"toolbar\">\n\n			    </div>\n			</div>\n	    </div>\n	  </div>\n\n	</div>\n\n\n";
+  return "\n\n\n\n	<div id=\"dishes-car\" class=\"carousel slide\">\n\n	  <!-- Carousel items -->\n	  <div class=\"carousel-inner\">\n\n\n	  </div>\n\n	</div>\n\n\n";
+  });
+
+this["App"]["templates"]["loading"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "\n<div class=\"row\">\n<div class=\"loader\"><i class=\"icon-spinner icon-spin icon-large\"></i> </div>\n</div>\n\n\n\n";
   });

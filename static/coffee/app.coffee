@@ -6,6 +6,11 @@ App.init = ->
 		Backbone.history.start pushState : true
 
 
+$(document).ajaxStart ->
+	App.appView.show(new App.LoadingView)
+
+
+
 
 
 $ ->

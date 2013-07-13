@@ -10,8 +10,10 @@ App.AppView = App.BaseView.extend
 		if target.hasClass('pass')
 			return
 		e.preventDefault()
+		$collapse = $('.nav-collapse')
+		unless !$collapse.hasClass 'in'
+			$collapse.collapse('hide')
 
-		$('.navigation').collapse()
 
 		href = target.attr('href')
 		App.router.navigate(href, true)

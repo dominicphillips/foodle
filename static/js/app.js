@@ -7,6 +7,10 @@ App.init = function() {
   });
 };
 
+$(document).ajaxStart(function() {
+  return App.appView.show(new App.LoadingView);
+});
+
 $(function() {
   return App.init();
 });

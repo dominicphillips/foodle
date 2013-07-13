@@ -8,13 +8,15 @@ App.HomeView = App.BaseView.extend({
     });
   },
   onDishReset: function(dishcol) {
-    return _.each(dishcol.models, function(dish) {
+    _.each(dishcol.models, function(dish) {
       var view;
+      console.log(dish);
       view = new App.DishView({
         model: dish
       });
-      return this.$el.find('#dishes').append(view.render().el);
+      return this.$el.find('.carousel-inner').append(view.render().el);
     }, this);
+    return this.$el.find('.item').first().addClass('active');
   },
   template: App.templates['home']
 });

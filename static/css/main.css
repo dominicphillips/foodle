@@ -237,7 +237,8 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 12px;
 }
 .demo-tiles {
-  margin-bottom: 46px;
+  width: 100%;
+  margin: 0 auto;
 }
 .demo-icons {
   font-size: 32px;
@@ -1911,6 +1912,7 @@ textarea[class*="span"] {
   -moz-box-shadow: none;
   box-shadow: none;
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+  background: #95a5a6;
   margin-bottom: 20px;
   position: relative;
 }
@@ -2806,7 +2808,8 @@ textarea[class*="span"] {
 .tile {
   background-color: #eff0f2;
   border-radius: 6px;
-  padding: 14px;
+  padding: 20px;
+  font-size: 30px;
   position: relative;
   text-align: center;
 }
@@ -3842,6 +3845,11 @@ body.vjs-full-window {
   height: 200px;
   background: #95a5a6;
 }
+.dish .toolbar .span3 {
+  width: 20%;
+  float: left;
+  margin-right: 20px;
+}
 .dish-navigation {
   text-align: center;
   font-weight: 100;
@@ -3855,15 +3863,16 @@ body.vjs-full-window {
 }
 .dish-navigation p {
   margin: 0px;
+  margin-bottom: 6px;
   font-weight: normal;
 }
 .dish-navigation span {
   display: block;
   color: #95a5a6;
-  padding: 5px 20px;
+  padding: 11px 20px;
   color: #fff;
   font-size: 50px;
-  top: 2px;
+  top: 0px;
   background: #34495e;
   position: absolute;
 }
@@ -3897,4 +3906,12 @@ body {
 .navbar-inverse .nav-collapse .dropdown-menu a:focus {
   background-color: #2c3e50 !important;
   color: #ffffff;
+}
+.progress {
+  background: #95a5a6;
+}
+.loader {
+  margin-top: 200px;
+  margin-left: 45%;
+  font-size: 60px;
 }

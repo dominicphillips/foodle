@@ -5,13 +5,16 @@ App.AppView = App.BaseView.extend({
     'click a': 'onClickLink'
   },
   onClickLink: function(e) {
-    var href, target;
+    var $collapse, href, target;
     target = $(e.currentTarget);
     if (target.hasClass('pass')) {
       return;
     }
     e.preventDefault();
-    $('.navigation').collapse();
+    $collapse = $('.nav-collapse');
+    if (!!$collapse.hasClass('in')) {
+      $collapse.collapse('hide');
+    }
     href = target.attr('href');
     return App.router.navigate(href, true);
   },
