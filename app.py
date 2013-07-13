@@ -13,7 +13,7 @@ config.read('foodle.ini')
 mongodb_url = config.get('MongoDB', 'url')
 
 #db init
-mongo = MongoClient(mongodb_url)
+mongo = MongoClient('localhost', 27017)
 db = mongo.foodle
 col_dishes = db.dishes
 
