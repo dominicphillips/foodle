@@ -25,7 +25,7 @@ def index():
 
 @app.route('/api/dishes/')
 def retrieve_dishes():
-    dishes = col_dishes.find().limit(5)
+    dishes = col_dishes.find().sort('restaurant',1).limit(50)
     items = []
     for dish in dishes:
         items.append(dish)
