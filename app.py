@@ -15,7 +15,7 @@ mongodb_url = config.get('MongoDB', 'url')
 #db init
 mongo = MongoClient(mongodb_url)
 db = mongo.foodle
-items_col = db.items
+col_dishes = db.dishes
 
 
 @app.route('/')
@@ -23,12 +23,12 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/items/')
-def retrieve_items():
-    query = items_col.find().limit(5)
+@app.route('/dishes/')
+def retrieve_dishes():
+    dishes = col_dishes.find().limit(5)
     items = []
-    for item in query:
-        items.append(item)
+    for dish in dishes:
+        items.append(dish)
     response = {'items': items}
 
     return jsonify(response)
