@@ -1,2 +1,20 @@
-{ "_id" : 1, "name" : "Pizza Tonno", "price" : 7.5, "health_score" : 2, "user_rating" : 4, "nutrition" : [], "food_class" : [], "restaurant" : 1 }
-{ "_id" : 2, "name" : "Pizza Vegetariana", "price" : 6, "health_score" : 4, "user_rating" : 3, "nutrition" : [], "food_class" : [ "vegitarian" ], "restaurant" : 1 }
+{ "_id" : 1, "name" : "Dal Maharani", "pic_url" : "/static/foodimg/1.jpg", "price" : 7.5, "health_score" : 2, "user_rating" : 4, "nutrition" : {}, "food_class" : [], "restaurant" : 1 }
+{ "_id" : 2, "name" : "Saag Alu", "pic_url" : "/static/foodimg/2.jpg", "price" : 6, "health_score" : 4, "user_rating" : 4, "nutrition" : {}, "food_class" : [ "vegetarian" ], "restaurant" : 1 }
+{ "_id" : 3, "name" : "Chicken Bhuna", "pic_url" : "/static/foodimg/3.jpg", "price" : 8, "health_score" : 2, "user_rating" : 0, "nutrition" : {}, "food_class" : [ "chicken" ], "restaurant" : 1 }
+{ "_id" : 4, "name" : "Kashmiri Chicken", "pic_url" : "/static/foodimg/4.jpg", "price" : 5.5, "health_score" : 3, "user_rating" : 3, "nutrition" : {}, "food_class" : [ "chicken" ], "restaurant" : 1 }
+{ "_id" : 5, "name" : "Dal Goasht", "pic_url" : "/static/foodimg/5.jpg", "price" : 7, "health_score" : 3, "user_rating" : 3, "nutrition" : {}, "food_class" : [ "lamb" ], "restaurant" : 1 }
+{ "_id" : 6, "name" : "Fish Tikka", "pic_url" : "/static/foodimg/6.jpg", "price" : 8.5, "health_score" : 5, "user_rating" : 2, "nutrition" : {}, "food_class" : [ "fish" ], "restaurant" : 1 }
+{ "_id" : 7, "name" : "Tandoori Chicken", "pic_url" : "/static/foodimg/7.jpg", "price" : 5.5, "health_score" : 4, "user_rating" : 3, "nutrition" : {}, "food_class" : [ "chicken" ], "restaurant" : 1 }
+{ "_id" : 8, "name" : "Punjabi Salat", "pic_url" : "/static/foodimg/8.jpg", "price" : 5.5, "health_score" : 4, "user_rating" : 0, "nutrition" : {}, "food_class" : [ "salad", "vegetarian" ], "restaurant" : 1 }
+{ "_id" : 9, "name" : "Bhindi Masala", "pic_url" : "/static/foodimg/9.jpg", "price" : 10.9, "health_score" : 4, "user_rating" : 5, "nutrition" : {}, "food_class" : [ "vegetarian" ], "restaurant" : 1 }
+{ "_id" : 10, "name" : "Karahi Paneer", "pic_url" : "/static/foodimg/10.jpg", "price" : 11.50, "health_score" : 3, "user_rating" : 5, "nutrition" : {}, "food_class" : [ "lamb" ], "restaurant" : 1 }
+{ "_id" : 11, "name" : "Tom Kha Gai", "pic_url" : "/static/foodimg/11.jpg", "price" : 4, "health_score" : 4, "user_rating" : 2, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 12, "name" : "Frühlingsrolle Thai Art", "pic_url" : "/static/foodimg/12.jpg", "price" : 2.5, "health_score" : 3, "user_rating" : 3, "nutrition" : {}, "food_class" : [ "vegetarian" ], "restaurant" : 2 }
+{ "_id" : 13, "name" : "Sate-Spieße", "pic_url" : "/static/foodimg/13.jpg", "price" : 4.5, "health_score" : 3, "user_rating" : 5, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 14, "name" : "Glasnudel-Salat", "pic_url" : "/static/foodimg/14.jpg", "price" : 7.4, "health_score" : 4, "user_rating" : 3, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 15, "name" : "Wok-Gemüse mit rotem Curry, Kokos", "pic_url" : "/static/foodimg/15.jpg", "price" : 6, "health_score" : 5, "user_rating" : 4, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 16, "name" : "Chop-Suey mit Huhn", "pic_url" : "/static/foodimg/16.jpg", "price" : 6.9, "health_score" : 4, "user_rating" : 3, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 17, "name" : "Knusprige Ente-Salat", "pic_url" : "/static/foodimg/17.jpg", "price" : 8.3, "health_score" : 3, "user_rating" : 5, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 18, "name" : "Gung Pao mit Schwein", "pic_url" : "/static/foodimg/18.jpg", "price" : 6.9, "health_score" : 2, "user_rating" : 5, "nutrition" : {}, "food_class" : [], "restaurant" : 2 }
+{ "_id" : 19, "name" : "Reis gebraten mit Ei", "pic_url" : "/static/foodimg/19.jpg", "price" : 6, "health_score" : 3, "user_rating" : 1, "nutrition" : {}, "food_class" : ["vegetarian"], "restaurant" : 2 }
+{ "_id" : 20, "name" : "Curry mit Tofu", "pic_url" : "/static/foodimg/20.jpg", "price" : 6, "health_score" : 4, "user_rating" : 1, "nutrition" : {}, "food_class" : ["vegetarian"], "restaurant" : 2 }

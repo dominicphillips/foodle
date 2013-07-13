@@ -1,1 +1,2 @@
-{ "_id" : 1, "name" : "Da Pietro", "address" : { "street" : "Ampfingstr. 48", "city" : "Munich", "state" : "Bayern", "zip" : "81671", "country" : "Germany" } }
+{ "_id" : 1, "name" : "Satyam", "address" : { "street" : "Berg-am-Laim-Str. 53", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" } }
+{ "_id" : 2, "name" : "Blue Ingwer Restaurant", "address" : { "street" : "Berg-am-Laim-Straße 65", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" } }

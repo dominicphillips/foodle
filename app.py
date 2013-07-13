@@ -16,6 +16,7 @@ mongodb_url = config.get('MongoDB', 'url')
 mongo = MongoClient('localhost', 27017)
 db = mongo.foodle
 col_dishes = db.dishes
+col_restaurants = db.restaurants
 
 
 @app.route('/')
@@ -25,13 +26,14 @@ def index():
 
 @app.route('/api/dishes/')
 def retrieve_dishes():
-    dishes = col_dishes.find().sort('restaurant',1).limit(50)
     items = []
-    for dish in dishes:
-        items.append(dish)
-    response = {'items': items}
-
-    return jsonify(response)
+    restaurants = col_restaurants.find()
+    for restaurant in restaurants:
+        dishes = col_dishes.find({'restaurant': restaurant['_id']})
+        for dish in dishes:
+            dish.update({'restaurant': restaurant})
+            items.append(dish)
+    return jsonify({'items': items})
 
 
 @app.route('/', defaults={'path': ''})
