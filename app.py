@@ -55,7 +55,17 @@ def retrieve_restaurants():
                 restaurant = result['obj']
                 restaurant.update({'distance': int(math.ceil(result['dis']))})
                 items.append(restaurant)
-    return jsonify({"items": items})
+    return jsonify({'items': items})
+
+@app.route('/api/restaurants/<int:restaurant_id>')
+def retrieve_restaurant(restaurant_id):
+    items = []
+    restaurant = col_restaurants.find_one({'_id':restaurant_id})
+    dishes = col_dishes.find({'restaurant': restaurant_id})
+    for dish in dishes:
+        items.append(dish)
+    restaurant.update({'dishes': items})
+    return jsonify({'items': restaurant})
 
 
 @app.route('/', defaults={'path': ''})
