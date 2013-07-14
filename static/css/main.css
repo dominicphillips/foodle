@@ -2816,13 +2816,13 @@ textarea[class*="span"] {
 }
 .tile.tile-hot:before {
   background: url(../images/tile/ribbon.png) 0 0 no-repeat;
-  background-size: 82px 82px;
+  background-size: 81px 81px;
   content: '';
-  height: 82px;
+  height: 81px;
   position: absolute;
   right: -4px;
   top: -4px;
-  width: 82px;
+  width: 81px;
 }
 .tile p {
   font-size: 15px;
@@ -2838,7 +2838,7 @@ textarea[class*="span"] {
 .tile-image.big-illustration {
   height: 111px;
   margin-top: 20px;
-  width: 112px;
+  width: 111px;
 }
 .tile-title {
   font-size: 20px;
@@ -3840,6 +3840,9 @@ body.vjs-full-window {
 }
 .carousel {
   margin-bottom: 0px;
+}
+.accordion a {
+  text-decoration: none;
 }
 #footer {
   position: relative;

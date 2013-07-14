@@ -5,8 +5,15 @@ App.DishView = App.BaseView.extend({
   events: {
     'click .tile': 'onClickTile'
   },
-  onClickTile: function() {
-    return App.appView.showModal(new App.MapsView);
+  onClickTile: function(e) {
+    var $target;
+    $target = $(e.currentTarget);
+    if ($target.hasClass('maps')) {
+      App.appView.showModal(new App.MapsView);
+    }
+    if ($target.hasClass('vote')) {
+      return App.appView.showModal(new App.VoteView);
+    }
   },
   onAfterRender: function() {
     var indicator, percent, score;

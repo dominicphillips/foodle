@@ -46,13 +46,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		            <small>5</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-location\"></div>\n		            <small>"
+    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		            <small>5</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile maps\">\n		            <div class=\"fui-location\"></div>\n		            <small>"
     + escapeExpression(((stack1 = ((stack1 = depth0.restaurant),stack1 == null || stack1 === false ? stack1 : stack1.distance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "m</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"icon-euro\"></div>\n		            <small>";
   if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + "</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3 last\">\n		          <div class=\"tile\">\n		            <div class=\"icon-star\"></div>\n		            <small>";
+    + "</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3 last\">\n		          <div class=\"tile vote\">\n		            <div class=\"icon-star\"></div>\n		            <small>";
   if (stack2 = helpers.user_rating) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.user_rating; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
@@ -66,7 +66,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Maps</h3>\n  </div>\n  <div class=\"modal-body\">\n    <iframe width=\"100%\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;output=embed\"></iframe><br /><small><a href=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;source=embed\" style=\"color:#0000FF;text-align:left\">Größere Kartenansicht</a></small>\n  </div>\n  <div class=\"modal-footer\">\n    <a href=\"#\" data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</a>\n  </div>";
+  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Maps</h3>\n  </div>\n  <div class=\"modal-body\">\n    <iframe width=\"100%\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;output=embed\"></iframe>\n  </div>\n  <div class=\"modal-footer\">\n    <button data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</button>\n  </div>";
+  });
+
+this["App"]["templates"]["dishes/vote"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Vote</h3>\n  </div>\n  <div class=\"modal-body\">\n\n  </div>\n  <div class=\"modal-footer\">\n    <a href=\"#\" data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</a>\n  </div>";
   });
 
 this["App"]["templates"]["error/404"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -102,18 +111,41 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "restaurants\n<div id=\"restaurants\"></div>";
+  return "\n<div class=\"accordion\" id=\"accordion2\">\n\n\n</div>\n\n\n";
   });
 
 this["App"]["templates"]["restaurant/restaurant"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<p>Peter</p>\n\n";
+  buffer += "    <div class=\"accordion-heading\">\n      <a class=\"accordion-toggle pass\" data-toggle=\"collapse\" data-parent=\"#accordion2\" href=\"#";
+  if (stack1 = helpers._id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0._id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n\n		";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1);
+  buffer += escapeExpression(stack1)
+    + "\n\n      </a>\n    </div>\n    <div id=\"";
+  if (stack1 = helpers._id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0._id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" class=\"accordion-body collapse in\">\n      <div class=\"accordion-inner\">\n		<div class=\"span3\">\n		  <div class=\"tile maps\">\n		    <div class=\"fui-location\"></div>\n		    <small>";
+  if (stack1 = helpers.distance) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.distance; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "m</small>\n		  </div>\n		</div>\n\n		<img src=\"/static/img/restaurant.jpg\" alt=\"\">\n\n\n		<small>\n			"
+    + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.city)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n			"
+    + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.street)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n			"
+    + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.zip)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n\n		</small>\n\n		<a class=\"btn btn-danger btn-large pull-right\" href=\"/restaurants/";
+  if (stack2 = helpers._id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0._id; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" target=\"\">\n                <i class=\"icon-food\"></i>\n        </a>\n\n      </div>\n    </div>\n\n";
   return buffer;
   });

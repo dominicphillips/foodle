@@ -6,15 +6,15 @@ App.RestaurantHomeView = App.BaseView.extend
 
 	initialize: ->
 		@restaurantCollection = new App.RestaurantCollection(@geo)
-		@restaurantCollection.on 'reset', @onrestaurantReset, @
+		@restaurantCollection.on 'reset', @onRestaurantReset, @
 		@restaurantCollection.fetch(reset : true)
 
 
 	onRestaurantReset : (restaurantcol) ->
 		_.each restaurantcol.models, (restaurant) ->
 			console.log(restaurant)
-			view = new App.restaurantView model : restaurant
-			@$el.find('#restaurants').append(view.render().el)
+			view = new App.RestaurantView model : restaurant
+			@$el.find('.accordion').append(view.render().el)
 
 		, @
 

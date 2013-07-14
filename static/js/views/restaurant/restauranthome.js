@@ -6,7 +6,7 @@ App.RestaurantHomeView = App.BaseView.extend({
   },
   initialize: function() {
     this.restaurantCollection = new App.RestaurantCollection(this.geo);
-    this.restaurantCollection.on('reset', this.onrestaurantReset, this);
+    this.restaurantCollection.on('reset', this.onRestaurantReset, this);
     return this.restaurantCollection.fetch({
       reset: true
     });
@@ -15,10 +15,10 @@ App.RestaurantHomeView = App.BaseView.extend({
     return _.each(restaurantcol.models, function(restaurant) {
       var view;
       console.log(restaurant);
-      view = new App.restaurantView({
+      view = new App.RestaurantView({
         model: restaurant
       });
-      return this.$el.find('#restaurants').append(view.render().el);
+      return this.$el.find('.accordion').append(view.render().el);
     }, this);
   },
   template: App.templates['restaurant/home']

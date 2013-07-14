@@ -3,7 +3,7 @@ App.Router = Backbone.Router.extend
 	routes :
 		'' : 'index'
 		'profile' : 'profile'
-		'restaurant' : 'restaurant'
+		'restaurants' : 'restaurants'
 
 	index: ->
 		navigator.geolocation.getCurrentPosition (position) ->
@@ -13,7 +13,7 @@ App.Router = Backbone.Router.extend
 	profile: ->
 		App.appView.show(new App.ProfileView)
 
-	restaurant: ->
+	restaurants: ->
 		navigator.geolocation.getCurrentPosition (position) ->
 			App.appView.show(new App.LoadingView)
 			App.appView.show(new App.RestaurantHomeView(position))

@@ -3,7 +3,7 @@ App.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
     'profile': 'profile',
-    'restaurant': 'restaurant'
+    'restaurants': 'restaurants'
   },
   index: function() {
     return navigator.geolocation.getCurrentPosition(function(position) {
@@ -14,7 +14,7 @@ App.Router = Backbone.Router.extend({
   profile: function() {
     return App.appView.show(new App.ProfileView);
   },
-  restaurant: function() {
+  restaurants: function() {
     return navigator.geolocation.getCurrentPosition(function(position) {
       App.appView.show(new App.LoadingView);
       return App.appView.show(new App.RestaurantHomeView(position));

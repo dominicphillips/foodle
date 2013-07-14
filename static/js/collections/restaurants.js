@@ -7,7 +7,7 @@ App.RestaurantCollection = Backbone.Collection.extend({
     return Backbone.Collection.apply(this, arguments);
   },
   url: function() {
-    return "/api/restaurants?lng=" + this.long + "&lat=" + this.lat;
+    return "/api/restaurants/?lng=" + this.long + "&lat=" + this.lat;
   },
   parse: function(response) {
     return response.items;

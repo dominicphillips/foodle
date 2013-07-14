@@ -1,6 +1,6 @@
 App.RestaurantView = App.BaseView.extend
 
-	className : 'item'
+	className : 'accordion-group'
 
 	template: App.templates['restaurant/restaurant']
 

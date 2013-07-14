@@ -8,8 +8,13 @@ App.DishView = App.BaseView.extend
 	events:
 		'click .tile' : 'onClickTile'
 
-	onClickTile : ->
-		App.appView.showModal(new App.MapsView)
+	onClickTile : (e) ->
+		$target = $(e.currentTarget)
+		if $target.hasClass('maps')
+			App.appView.showModal(new App.MapsView)
+		if $target.hasClass('vote')
+			App.appView.showModal(new App.VoteView)
+
 
 
 	onAfterRender : ->

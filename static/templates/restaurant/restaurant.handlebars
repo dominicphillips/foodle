@@ -1,3 +1,33 @@
-<p>Peter</p>
+    <div class="accordion-heading">
+      <a class="accordion-toggle pass" data-toggle="collapse" data-parent="#accordion2" href="#{{_id}}">
 
-{{name}}
+		{{name}}
+
+      </a>
+    </div>
+    <div id="{{_id}}" class="accordion-body collapse in">
+      <div class="accordion-inner">
+		<div class="span3">
+		  <div class="tile maps">
+		    <div class="fui-location"></div>
+		    <small>{{distance}}m</small>
+		  </div>
+		</div>
+
+		<img src="/static/img/restaurant.jpg" alt="">
+
+
+		<small>
+			{{address.city}}
+			{{address.street}}
+			{{address.zip}}
+
+		</small>
+
+		<a class="btn btn-danger btn-large pull-right" href="/restaurants/{{_id}}" target="">
+                <i class="icon-food"></i>
+        </a>
+
+      </div>
+    </div>
+
