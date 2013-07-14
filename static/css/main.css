@@ -238,7 +238,7 @@ you can use the generic selector below, but it's slower:
 }
 .demo-tiles {
   margin: 0px auto;
-  width: 340px;
+  width: 320px;
   text-align: center;
 }
 .demo-icons {
@@ -3915,8 +3915,8 @@ body.vjs-full-window {
 .dish .toolbar .span3 {
   width: 22%;
   float: left;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 .dish .toolbar .span3.last {
   margin-right: 0px;
