@@ -3991,6 +3991,7 @@ body {
 }
 .rating {
   width: 320px;
+  margin: 0 auto;
   font-size: 35px;
   color: #95a5a6;
   unicode-bidi: bidi-override;
