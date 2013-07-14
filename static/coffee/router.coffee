@@ -13,7 +13,7 @@ App.Router = Backbone.Router.extend
 	dish: (id) ->
 		model = new App.Dish('_id' : id)
 		model.fetch
-			url : '/api/dishes/' + id + "/?lng=#{position.longitude}&lat=#{position.latitude}"
+			url : '/api/dishes/' + id + "/?lng=#{App.position.longitude}&lat=#{App.position.latitude}"
 			success: (success) ->
 				model.set('stripped', true)
 				view = new App.DishView model: model

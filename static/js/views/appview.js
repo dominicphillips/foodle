@@ -41,7 +41,8 @@ App.AppView = App.BaseView.extend({
   showModal: function(view) {
     var modal;
     modal = $('.modal');
-    return modal.html(view.render().el).modal('show');
+    modal.html(view.render().el).modal('show');
+    return typeof view.onAfterRender === "function" ? view.onAfterRender() : void 0;
   },
   onClickLink: function(e) {
     var $collapse, href, target;
@@ -62,6 +63,7 @@ App.AppView = App.BaseView.extend({
       this.currentView.remove();
     }
     this.currentView = view;
-    return this.$el.find('#content').html(view.render().el);
+    this.$el.find('#content').html(view.render().el);
+    return typeof view.onAfterRender === "function" ? view.onAfterRender() : void 0;
   }
 });

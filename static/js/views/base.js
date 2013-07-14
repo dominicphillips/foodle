@@ -3,9 +3,6 @@ App.BaseView = Backbone.View.extend({
   render: function() {
     var _ref;
     this.$el.html(this.template(((_ref = this.model) != null ? _ref.toJSON() : void 0) || {}));
-    if (typeof this.onAfterRender === "function") {
-      this.onAfterRender();
-    }
     return this;
   }
 });

@@ -52,46 +52,6 @@
 		<div id="content"></div>
     <div class="modal hide fade"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script>
-      var directionsDisplay;
-      var directionsService = new google.maps.DirectionsService();
-      var map;
-
-      function initialize() {
-        directionsDisplay = new google.maps.DirectionsRenderer();
-        var start = new google.maps.LatLng(48.132678,11.614595)
-        var end = new google.maps.LatLng(48.132459, 11.610076);
-        var mapOptions = {
-          zoom:7,
-          disableDefaultUI: true,
-          draggable: false,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          center: start
-        }
-        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        directionsDisplay.setMap(map);
-        calcRoute(start, end)
-      }
-
-      function calcRoute(start, end) {
-        var request = {
-            origin:start,
-            destination:end,
-            travelMode: google.maps.DirectionsTravelMode.WALKING
-        };
-        directionsService.route(request, function(response, status) {
-          if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-          }
-        });
-      }
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-<div id="map-canvas" style="height:400px"></div>
-	</div>
 
   <div id="footer">
             <span id="footer-trigger" class="fui-plus"></span>
@@ -121,6 +81,7 @@
 <!-- Vendor Stuff -->
 
 <script src="/static/js/vendor/jquery/jquery.js" ></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="/static/js/bootstrap.min.js" ></script>
 <script src="/static/js/vendor/lodash/lodash.js" ></script>
 <script src="/static/js/vendor/backbone/backbone.js" ></script>

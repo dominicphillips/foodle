@@ -74,7 +74,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Maps</h3>\n  </div>\n  <div class=\"modal-body\">\n    <iframe width=\"100%\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;output=embed\"></iframe>\n  </div>\n  <div class=\"modal-footer\">\n    <button data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</button>\n  </div>";
+  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Maps</h3>\n  </div>\n  <div class=\"modal-body\">\n\n    <div id=\"map-canvas\" style=\"height:400px\"></div>\n\n  </div>\n  <div class=\"modal-footer\">\n    <button data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</button>\n  </div>";
   });
 
 this["App"]["templates"]["dishes/vote"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

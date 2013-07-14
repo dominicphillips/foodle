@@ -38,6 +38,8 @@ App.AppView = App.BaseView.extend
 	showModal: (view) ->
 		modal = $('.modal')
 		modal.html(view.render().el).modal('show')
+		view.onAfterRender?()
+
 
 
 	onClickLink: (e) ->
@@ -59,5 +61,6 @@ App.AppView = App.BaseView.extend
 
 		this.currentView = view
 		this.$el.find('#content').html(view.render().el)
+		view.onAfterRender?()
 
 
