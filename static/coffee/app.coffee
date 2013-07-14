@@ -14,4 +14,6 @@ $(document).ajaxStart ->
 
 
 $ ->
-	App.init()
+	navigator.geolocation.getCurrentPosition (position) ->
+		App.position = position
+		App.init()

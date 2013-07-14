@@ -12,5 +12,8 @@ $(document).ajaxStart(function() {
 });
 
 $(function() {
-  return App.init();
+  return navigator.geolocation.getCurrentPosition(function(position) {
+    App.position = position;
+    return App.init();
+  });
 });

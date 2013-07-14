@@ -50,7 +50,7 @@ def retrieve_dish(dish_id):
     dish = col_dishes.find_one({'_id': dish_id})
     restaurant = col_restaurants.find_one({'_id': dish['restaurant']})
     dish.update({'restaurant': restaurant})
-    return jsonify({'items': dish})
+    return jsonify(dish)
 
 
 @app.route('/api/dishes/<int:dish_id>/rate/')

@@ -2,22 +2,36 @@
 App.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
+    'dishes/:id': 'dish',
     'profile': 'profile',
     'restaurants': 'restaurants'
   },
   index: function() {
-    return navigator.geolocation.getCurrentPosition(function(position) {
-      App.appView.show(new App.LoadingView);
-      return App.appView.show(new App.HomeView(position));
+    App.appView.show(new App.LoadingView);
+    return App.appView.show(new App.HomeView(App.position));
+  },
+  dish: function(id) {
+    var model;
+    model = new App.Dish({
+      '_id': id
+    });
+    return model.fetch({
+      url: '/api/dishes/' + id + ("/?lng=" + position.longitude + "&lat=" + position.latitude),
+      success: function(success) {
+        var view;
+        model.set('stripped', true);
+        view = new App.DishView({
+          model: model
+        });
+        return App.appView.show(view);
+      }
     });
   },
   profile: function() {
     return App.appView.show(new App.ProfileView);
   },
   restaurants: function() {
-    return navigator.geolocation.getCurrentPosition(function(position) {
-      App.appView.show(new App.LoadingView);
-      return App.appView.show(new App.RestaurantHomeView(position));
-    });
+    App.appView.show(new App.LoadingView);
+    return App.appView.show(new App.RestaurantHomeView(App.position));
   }
 });
