@@ -47,7 +47,7 @@ def retrieve_restaurants():
         results = query['results']
         for result in results:
                 restaurant = result['obj']
-                restaurant.update({'distance': math.ceil(result['dis'])})
+                restaurant.update({'distance': int(math.ceil(result['dis']))})
                 items.append(restaurant)
     return jsonify({"items": items})
 
