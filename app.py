@@ -27,13 +27,19 @@ def index():
 
 @app.route('/api/dishes/')
 def retrieve_dishes():
+    lng = request.args.get('lng')
+    lat = request.args.get('lat')
     items = []
-    restaurants = col_restaurants.find()
-    for restaurant in restaurants:
-        dishes = col_dishes.find({'restaurant': restaurant['_id']})
-        for dish in dishes:
-            dish.update({'restaurant': restaurant})
-            items.append(dish)
+    if lng is not None and lat is not None:
+        query = db.command(SON([('geoNear', 'restaurants'), ('near', [float(lng), float(lat)]), ('spherical', 'true'), ('distanceMultiplier', (6371000))]))
+        results = query['results']
+        for result in results:
+                restaurant = result['obj']
+                restaurant.update({'distance': int(math.ceil(result['dis']))})
+                dishes = col_dishes.find({'restaurant': restaurant['_id']})
+                for dish in dishes:
+                    dish.update({'restaurant': restaurant})
+                    items.append(dish)
     return jsonify({'items': items})
 
 
