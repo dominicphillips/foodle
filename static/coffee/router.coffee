@@ -6,6 +6,10 @@ App.Router = Backbone.Router.extend
 		'profile' : 'profile'
 		'restaurants' : 'restaurants'
 
+		'register' : 'register'
+
+
+
 	index: ->
 		App.appView.show(new App.LoadingView)
 		App.appView.show(new App.HomeView(App.position))
@@ -21,6 +25,9 @@ App.Router = Backbone.Router.extend
 
 	profile: ->
 		App.appView.show(new App.ProfileView)
+
+	register: ->
+		App.appView.show(new App.RegisterView)
 
 	restaurants: ->
 		App.appView.show(new App.LoadingView)
