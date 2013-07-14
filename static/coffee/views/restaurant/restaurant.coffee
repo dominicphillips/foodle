@@ -1,8 +1,8 @@
-App.DishView = App.BaseView.extend
+App.RestaurantView = App.BaseView.extend
 
 	className : 'item'
 
-	template: App.templates['dishes/dish']
+	template: App.templates['restaurant/restaurant']
 
 
 	events:

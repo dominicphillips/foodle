@@ -1,4 +1,4 @@
-App.DishCollection = Backbone.Collection.extend
+App.RestaurantCollection = Backbone.Collection.extend
 	model : App.Dish
 
 	constructor : (geo) ->
@@ -7,7 +7,7 @@ App.DishCollection = Backbone.Collection.extend
 		Backbone.Collection.apply(this, arguments)
 
 	url : ->
-		return "/api/dishes?lng=#{@long}&lat=#{@lat}"
+		return "/api/restaurants?lng=#{@long}&lat=#{@lat}"
 
 	parse: (response) ->
 		return response.items

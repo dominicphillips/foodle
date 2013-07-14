@@ -4,16 +4,37 @@
 	.image-container {
 		max-height: 400px;
 		overflow: hidden;
+
+		img {
+			width:100%;
+		}
+	}
+
+	[class^="icon-"] {
+		display: block;
+	}
+
+	small {
+		margin-top:5px;
+		font-size:15px;
+		min-height: 50px;
+		min-width: 20px;
 	}
 
 	.toolbar {
-		height:200px;
+		height:160px;
 		background:@concrete;
 
 		.span3 {
 			width:20%;
 			float:left;
-			margin-right:20px;
+			margin-right:10px;
+			margin-left:10px;
+
+		&.last {
+    			margin-right:0px;
+  				}
+
 		}
 
 	}

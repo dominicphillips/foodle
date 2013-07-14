@@ -31,19 +31,42 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["App"]["templates"]["dishes/dish"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
   buffer += "\n		    <div class=\"dish\">\n        <div class=\"image-container\">\n        	<a href=\"/dishes/";
   if (stack1 = helpers._id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0._id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n        		<img src=\"/static/img/bento.jpg\" alt=\"\">\n        	</a>\n\n        </div>\n    	<div class=\"dish-navigation\">\n\n    	    <span class=\"right pass\"  href=\"#dishes-car\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n    	    <span class=\"left pass\"  href=\"#dishes-car\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n    	    <p>";
+    + "\">\n        		<img src=\"";
+  if (stack1 = helpers.pic_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.pic_url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" alt=\"\">\n        	</a>\n\n        </div>\n    	<div class=\"dish-navigation\">\n\n    	    <span class=\"right pass\"  href=\"#dishes-car\" data-slide=\"next\" ><i class=\"icon-angle-right\"></i></span>\n    	    <span class=\"left pass\"  href=\"#dishes-car\" data-slide=\"prev\"><i class=\"icon-angle-left\"></i></span>\n    	    <p>";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-location\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-heart\"></div>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"icon-star\"></div>\n		          </div>\n		        </div>\n\n\n		        </div>\n		      </div>\n\n\n\n\n        </div>\n    </div>\n\n";
+    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		            <small>5</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-location\"></div>\n		            <small>"
+    + escapeExpression(((stack1 = ((stack1 = depth0.restaurant),stack1 == null || stack1 === false ? stack1 : stack1.distance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "m</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"icon-euro\"></div>\n		            <small>";
+  if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3 last\">\n		          <div class=\"tile\">\n		            <div class=\"icon-star\"></div>\n		            <small>";
+  if (stack2 = helpers.user_rating) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.user_rating; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "/5</small>\n		          </div>\n		        </div>\n\n\n		        </div>\n		      </div>\n\n\n\n\n        </div>\n    </div>\n\n";
   return buffer;
+  });
+
+this["App"]["templates"]["dishes/maps"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Maps</h3>\n  </div>\n  <div class=\"modal-body\">\n    <iframe width=\"100%\" height=\"350\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;output=embed\"></iframe><br /><small><a href=\"https://maps.google.de/maps?q=google+maps+rotkreuzplatz&amp;ie=UTF8&amp;hq=&amp;hnear=Hotel+Rotkreuzplatz,+Rotkreuzplatz+2,+M%C3%BCnchen+80634+M%C3%BCnchen,+Bayern&amp;gl=de&amp;t=m&amp;z=14&amp;ll=48.152545,11.533353&amp;source=embed\" style=\"color:#0000FF;text-align:left\">Größere Kartenansicht</a></small>\n  </div>\n  <div class=\"modal-footer\">\n    <a href=\"#\" data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</a>\n  </div>";
   });
 
 this["App"]["templates"]["error/404"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -71,4 +94,26 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   return "\n<div class=\"row\">\n<div class=\"loader\"><i class=\"icon-spinner icon-spin icon-large\"></i> </div>\n</div>\n\n\n\n";
+  });
+
+this["App"]["templates"]["restaurant/home"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "restaurants\n<div id=\"restaurants\"></div>";
+  });
+
+this["App"]["templates"]["restaurant/restaurant"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<p>Peter</p>\n\n";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1);
+  return buffer;
   });

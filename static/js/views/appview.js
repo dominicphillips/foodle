@@ -2,7 +2,46 @@
 App.AppView = App.BaseView.extend({
   el: '#app',
   events: {
-    'click a': 'onClickLink'
+    'click a': 'onClickLink',
+    'click #footer-trigger': 'onClickFooter',
+    'click .filter': 'onClickFilter'
+  },
+  onClickFooter: function() {
+    var $footer, $trigger;
+    $footer = $('#footer');
+    $trigger = $footer.find('#footer-trigger');
+    if (!$footer.hasClass('open')) {
+      $trigger.removeClass('fui-plus').addClass('fui-cross');
+      $("html, body").animate({
+        scrollTop: 150
+      });
+      $footer.animate({
+        height: 150
+      });
+    } else {
+      $trigger.removeClass('fui-cross').addClass('fui-plus');
+      $footer.animate({
+        height: 50
+      });
+    }
+    return $footer.toggleClass('open');
+  },
+  onClickFilter: function(e) {
+    var $switch, $target;
+    $target = $(e.currentTarget);
+    $switch = $target.find('.switch-animate');
+    if ($switch.hasClass('switch-off')) {
+      $switch.removeClass('switch-off');
+      return $switch.addClass('switch-on');
+    } else {
+      $switch.removeClass('switch-on');
+      return $switch.addClass('switch-off');
+    }
+  },
+  showModal: function(view) {
+    var modal;
+    modal = $('.modal');
+    return modal.html(view.render().el).modal('show');
   },
   onClickLink: function(e) {
     var $collapse, href, target;

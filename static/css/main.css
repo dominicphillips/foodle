@@ -237,8 +237,9 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 12px;
 }
 .demo-tiles {
-  width: 100%;
-  margin: 0 auto;
+  margin: 0px auto;
+  width: 400px;
+  text-align: center;
 }
 .demo-icons {
   font-size: 32px;
@@ -3834,6 +3835,39 @@ body.vjs-full-window {
 .mal {
   margin-left: 20px;
 }
+#content {
+  min-height: 620px;
+}
+.carousel {
+  margin-bottom: 0px;
+}
+#footer {
+  position: relative;
+  color: #ffffff;
+  height: 50px;
+  background: #2c3e50;
+  overflow: hidden;
+}
+#footer #footer-trigger {
+  position: absolute;
+  font-size: 30px;
+  left: 48%;
+  top: 7px;
+}
+#footer .share-label {
+  width: 82%;
+}
+#footer ul {
+  position: relative;
+  top: 35px;
+  list-style: none;
+  padding: 15px;
+  height: 60px;
+  margin: 0px;
+}
+#footer li {
+  margin-bottom: 10px;
+}
 .dish {
   position: relative;
 }
@@ -3841,14 +3875,30 @@ body.vjs-full-window {
   max-height: 400px;
   overflow: hidden;
 }
+.dish .image-container img {
+  width: 100%;
+}
+.dish [class^="icon-"] {
+  display: block;
+}
+.dish small {
+  margin-top: 5px;
+  font-size: 15px;
+  min-height: 50px;
+  min-width: 20px;
+}
 .dish .toolbar {
-  height: 200px;
+  height: 160px;
   background: #95a5a6;
 }
 .dish .toolbar .span3 {
   width: 20%;
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.dish .toolbar .span3.last {
+  margin-right: 0px;
 }
 .dish-navigation {
   text-align: center;
