@@ -3918,6 +3918,9 @@ body.vjs-full-window {
   margin-right: 4px;
   margin-left: 4px;
 }
+.dish .toolbar .span3.first {
+  margin-left: 6px;
+}
 .dish .toolbar .span3.last {
   margin-right: 0px;
 }
