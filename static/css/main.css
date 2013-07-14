@@ -3995,3 +3995,24 @@ body {
   background: #2c3e50;
   height: 200px;
 }
+.accordion-inner {
+  padding: 0px;
+}
+.accordion-group {
+  border: 0px;
+}
+.accordion-footer {
+  background: #2c3e50;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 15px;
+}
+.accordion-footer p {
+  width: 500px;
+}
+.accordion-footer .fui-location {
+  padding: 5px;
+}
+.accordion-footer .address {
+  margin-top: 10px;
+}

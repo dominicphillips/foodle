@@ -147,16 +147,20 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.distance) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.distance; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "m</small>\n		  </div>\n		</div>\n\n		<img src=\"/static/img/restaurant.jpg\" alt=\"\">\n\n\n		<small>\n			"
-    + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.city)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n			"
+    + "m</small>\n		  </div>\n		</div>\n\n		<img width=\"100%\" src=\"";
+  if (stack1 = helpers.pic_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.pic_url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" alt=\"\">\n\n		<div class=\"accordion-footer\">\n			<div class=\"address pull-left\">\n\n				<span class=\"fui-location\"></span>\n				"
     + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.street)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " <br />\n			"
+    + ",\n				"
     + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.zip)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n\n		</small>\n\n		<a class=\"btn btn-danger btn-large pull-right\" href=\"/restaurants/";
+    + "\n				"
+    + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.city)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n\n\n\n			</div>\n\n			<a class=\"btn btn-danger btn-large pull-right\" href=\"/restaurants/";
   if (stack2 = helpers._id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0._id; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + "\" target=\"\">\n                <i class=\"icon-food\"></i>\n        </a>\n\n      </div>\n    </div>\n\n";
+    + "\" target=\"\">\n			    <i class=\"icon-food\"></i>\n			</a>\n\n		</div>\n\n\n\n\n\n\n      </div>\n    </div>\n\n";
   return buffer;
   });

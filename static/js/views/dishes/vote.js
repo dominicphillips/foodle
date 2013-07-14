@@ -9,6 +9,7 @@ App.VoteView = App.BaseView.extend({
     index = $(e.currentTarget).index();
     vote = 5 - index;
     return $.get("/api/dishes/" + (this.model.get('_id')) + "/rate/?rating=" + vote, function() {
+      _this.$el.modal('hide');
       return App.router.navigate('/', true);
     });
   },

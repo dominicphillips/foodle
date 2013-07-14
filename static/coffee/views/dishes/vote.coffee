@@ -7,6 +7,7 @@ App.VoteView = App.BaseView.extend
 		index = $(e.currentTarget).index()
 		vote = 5 - index
 		$.get "/api/dishes/#{@model.get('_id')}/rate/?rating=#{vote}", =>
+			@$el.modal('hide')
 			App.router.navigate('/', true)
 
 

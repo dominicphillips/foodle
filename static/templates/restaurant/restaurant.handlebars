@@ -14,19 +14,30 @@
 		  </div>
 		</div>
 
-		<img src="/static/img/restaurant.jpg" alt="">
+		<img width="100%" src="{{pic_url}}" alt="">
+
+		<div class="accordion-footer">
+			<div class="address pull-left">
+
+				<span class="fui-location"></span>
+				{{address.street}},
+				{{address.zip}}
+				{{address.city}}
 
 
-		<small>
-			{{address.street}}, <br />
-			{{address.zip}}
-			{{address.city}}
 
-		</small>
+			</div>
 
-		<a class="btn btn-danger btn-large pull-right" href="/restaurants/{{_id}}" target="">
-                <i class="icon-food"></i>
-        </a>
+			<a class="btn btn-danger btn-large pull-right" href="/restaurants/{{_id}}" target="">
+			    <i class="icon-food"></i>
+			</a>
+
+		</div>
+
+
+
+
+
 
       </div>
     </div>
