@@ -66,7 +66,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/api/users/register/')
+@app.route('/api/users/register/', methods=["GET", "POST"])
 def register_user():
     if request.form and request.form.name and request.form.email and request.form.password:
         form_data = request.form
@@ -94,7 +94,7 @@ def register_user():
         return jsonify({'status': 'success'})
 
 
-@app.route('/api/users/login/')
+@app.route('/api/users/login/', methods=["GET", "POST"])
 def login_user():
     if request.form and request.form.login and request.form.password:
         login = request.form.login
