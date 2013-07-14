@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 from pymongo import MongoClient, GEOSPHERE
 from bson.son import SON
+from werkzeug.contrib.fixers import ProxyFix
 import math
 
 import ConfigParser
@@ -19,6 +20,7 @@ db = mongo.foodle
 col_dishes = db.dishes
 col_restaurants = db.restaurants
 col_restaurants.ensure_index([("location", GEOSPHERE)])
+
 
 @app.route('/')
 def index():
@@ -101,6 +103,9 @@ def retrieve_restaurant(restaurant_id):
 @app.route('/<path:path>')
 def catch_all(path):
     return render_template('index.html')
+
+
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 if __name__ == '__main__':

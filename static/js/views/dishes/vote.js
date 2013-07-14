@@ -8,9 +8,8 @@ App.VoteView = App.BaseView.extend({
       _this = this;
     index = $(e.currentTarget).index();
     vote = 5 - index;
-    this.$el.html(new App.LoadingView);
     return $.get("/api/dishes/" + (this.model.get('_id')) + "/rate/?rating=" + vote, function() {
-      return _this.$el.modal('hide');
+      return App.router.navigate('/', true);
     });
   },
   template: App.templates['dishes/vote']
