@@ -14,7 +14,12 @@ App.DishView = App.BaseView.extend({
       }));
     }
     if ($target.hasClass('vote')) {
-      return App.appView.showModal(new App.VoteView({
+      App.appView.showModal(new App.VoteView({
+        model: this.model
+      }));
+    }
+    if ($target.hasClass('comment')) {
+      return App.appView.showModal(new App.CommentView({
         model: this.model
       }));
     }

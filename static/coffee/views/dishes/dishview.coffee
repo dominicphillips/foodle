@@ -14,6 +14,8 @@ App.DishView = App.BaseView.extend
 			App.appView.showModal(new App.MapsView model : @model)
 		if $target.hasClass('vote')
 			App.appView.showModal(new App.VoteView model : @model)
+		if $target.hasClass('comment')
+			App.appView.showModal(new App.CommentView model : @model)
 
 
 

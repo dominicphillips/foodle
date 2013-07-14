@@ -16,7 +16,7 @@ App.Router = Backbone.Router.extend({
       '_id': id
     });
     return model.fetch({
-      url: '/api/dishes/' + id + ("/?lng=" + App.position.longitude + "&lat=" + App.position.latitude),
+      url: '/api/dishes/' + id + ("/?lng=" + App.position.coords.longitude + "&lat=" + App.position.coords.latitude),
       success: function(success) {
         var view;
         model.set('stripped', true);

@@ -28,6 +28,15 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<div class=\"row\">\n\n<div class=\"login\">\n  <div class=\"login-screen col-8 col-offset-2\">\n    <div class=\"login-icon col-3 col-offset-1\">\n      <img src=\"/public/images/rocket.png\" alt=\"Welcome\" />\n      <h4>Welcome to <small>Tracking</small></h4>\n    </div>\n\n    <div class=\"login-form col-6\">\n      <form method=\"POST\" action=\"/Account/Register\">\n\n      <div class=\"control-group\">\n        <input type=\"text\" class=\"login-field\" value=\"\" name=\"name\" placeholder=\"Name\" id=\"login-name\" />\n        <label class=\"login-field-icon fui-user\" for=\"login-name\"></label>\n      </div>\n\n      <div class=\"control-group\">\n        <input type=\"password\" class=\"login-field\" value=\"\" name=\"password\" placeholder=\"Password\" id=\"login-pass\" />\n        <label class=\"login-field-icon fui-lock\" for=\"login-pass\"></label>\n      </div>\n\n      <div class=\"control-group\">\n        <input type=\"email\" class=\"login-field\" value=\"\" name=\"email\" placeholder=\"Email\" id=\"login-email\" />\n        <label class=\"login-field-icon fui-mail\" for=\"login-email\"></label>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-primary btn-large btn-block\" href=\"#\">Sign up</button>\n      <a class=\"login-link\" href=\"#\">Terms of Service</a>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n\n</div>";
   });
 
+this["App"]["templates"]["dishes/comment"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Comments</h3>\n  </div>\n  <div class=\"modal-body\">\n\n    <div id=\"disqus_thread\"></div>\n    <script type=\"text/javascript\">\n        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */\n        var disqus_shortname = 'foodle'; // required: replace example with your forum shortname\n\n        /* * * DON'T EDIT BELOW THIS LINE * * */\n        (function() {\n            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;\n            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';\n            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);\n        })();\n    </script>\n\n  </div>\n  <div class=\"modal-footer\">\n    <button data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</button>\n  </div>";
+  });
+
 this["App"]["templates"]["dishes/dish"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -54,7 +63,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"fui-chat\"></div>\n		            <small>5</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile maps\">\n		            <div class=\"fui-location\"></div>\n		            <small>"
+    + "</p><small>with mixed Salad</small>\n\n    	</div>\n        <div class=\"toolbar\">\n        <div class=\"progress\">\n 		 <div class=\"bar\" style=\"width: 0%;\"></div>\n		</div>\n		<div class=\"row demo-tiles\">\n\n\n		        <div class=\"span3\">\n		          <div class=\"tile comment\">\n		            <div class=\"fui-chat\"></div>\n		            <small>5</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile maps\">\n		            <div class=\"fui-location\"></div>\n		            <small>"
     + escapeExpression(((stack1 = ((stack1 = depth0.restaurant),stack1 == null || stack1 === false ? stack1 : stack1.distance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "m</small>\n		          </div>\n		        </div>\n\n		        <div class=\"span3\">\n		          <div class=\"tile\">\n		            <div class=\"icon-euro\"></div>\n		            <small>";
   if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
