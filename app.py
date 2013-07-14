@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+from flask.ext.login import LoginManager
 from pymongo import MongoClient, GEOSPHERE
 from bson.son import SON
 from werkzeug.contrib.fixers import ProxyFix
@@ -93,22 +94,24 @@ def register_user():
         return jsonify({'status': 'success'})
 
 
-@app.rout('/api/users/login/')
+@app.route('/api/users/login/')
 def login_user():
-    if reques.form and requst.form.login and request.form.password:
+    if request.form and request.form.login and request.form.password:
         login = request.form.login
         password = request.form.password
         if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", login):
             user = col_users.fetch_one({'name': login})
             if user and (user.pwd == check_password_hash(user.pwd, password)):
-
+                pass
         else:
+            pass #TODO
 
     else:
         return jsonify({
             'status': 'error',
             'msg': "Sorry, something went wrong!"
         })
+
 
 @app.route('/api/dishes/')
 def retrieve_dishes():
