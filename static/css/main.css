@@ -392,7 +392,7 @@ you can use the generic selector below, but it's slower:
   border-radius: 0 0 6px;
 }
 .demo-browser-content .progress {
-  width: 400px;
+  width: 50%;
 }
 .demo-browser-content .badg {
   border: 0px;
