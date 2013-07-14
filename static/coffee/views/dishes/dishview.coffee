@@ -20,6 +20,7 @@ App.DishView = App.BaseView.extend
 
 
 	onAfterRender : ->
+
 		score = @model.get('health_score')
 		percent = score * 100 / 5
 		indicator = 'success'

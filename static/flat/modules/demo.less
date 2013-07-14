@@ -164,6 +164,7 @@
 .demo-browser {
 }
 .demo-browser-side {
+  color:@inverse;
   float: left;
   padding: 22px 20px;
   width: 111px;
@@ -182,9 +183,11 @@
 }
 .demo-browser-author {
 //  background: url(../images/demo/browser-author.jpg) center center no-repeat;
+overflow: hidden;
   border: 3px solid @inverse;
   display: block;
   height: 84px;
+  color:@inverse;
   margin: 0 auto;
   width: 84px;
   .border-radius(50%);
@@ -211,15 +214,29 @@
   }
 }
 .demo-browser-content {
+  color:@inverse;
   overflow: hidden;
   padding: 21px 0 0 20px;
   .border-radius(0 0 6px);
+
+  .progress {
+    width:400px;
+  }
+
+  .badg {
+    border:0px;
+    padding:3px;
+  }
+  .badg.disabled {
+    opacity: 0.5;
+  }
+
 
   > img {
     border: 6px solid @inverse;
     float: left;
     margin: 0 15px 20px 0;
-    width: 134px;
+    width: 110px;
   }
 }
 

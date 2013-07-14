@@ -7,6 +7,7 @@ App.Router = Backbone.Router.extend
 		'restaurants' : 'restaurants'
 
 		'register' : 'register'
+		'login' : 'login'
 
 
 
@@ -28,6 +29,9 @@ App.Router = Backbone.Router.extend
 
 	register: ->
 		App.appView.show(new App.RegisterView)
+
+	login: ->
+		App.appView.show(new App.LoginView)
 
 	restaurants: ->
 		App.appView.show(new App.LoadingView)

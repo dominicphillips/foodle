@@ -3,15 +3,14 @@
 <div class="login">
   <div class="login-screen col-8 col-offset-2">
     <div class="login-icon col-3 col-offset-1">
-      <img src="/public/images/rocket.png" alt="Welcome" />
-      <h4>Welcome to <small>Tracking</small></h4>
+      <h4>Welcome to <small>Foodle</small></h4>
     </div>
 
     <div class="login-form col-6">
-      <form method="POST" action="/Account/Login" autocomplete="off">
+      <form method="POST" action="/api/user/login" autocomplete="off">
 
       <div class="control-group">
-        <input type="text" class="login-field" value="" name="name" placeholder="Name" id="login-name" />
+        <input type="text" class="login-field" value="" name="login" placeholder="Name" id="login-name" />
         <label class="login-field-icon fui-user" for="login-name"></label>
       </div>
 

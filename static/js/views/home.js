@@ -17,7 +17,8 @@ App.HomeView = App.BaseView.extend({
       view = new App.DishView({
         model: dish
       });
-      return this.$el.find('.carousel-inner').append(view.render().el);
+      this.$el.find('.carousel-inner').append(view.render().el);
+      return view.onAfterRender();
     }, this);
     return this.$el.find('.item').first().addClass('active');
   },

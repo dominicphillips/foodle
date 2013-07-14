@@ -10,20 +10,21 @@
 		}
 	}
 
-	[class^="icon-"] {
-		display: block;
-	}
-
 	small {
 		margin-top:5px;
 		font-size:15px;
-		min-height: 50px;
+		height:  50px;
 		min-width: 20px;
 	}
 
 	.toolbar {
 		height:160px;
 		background:@concrete;
+
+		[class^="icon-"], [class^="fui-"] {
+			display: block;
+			margin-bottom: 5px;
+		}
 
 		.span3 {
 			width:20%;

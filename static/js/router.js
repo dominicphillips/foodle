@@ -4,7 +4,9 @@ App.Router = Backbone.Router.extend({
     '': 'index',
     'dishes/:id': 'dish',
     'profile': 'profile',
-    'restaurants': 'restaurants'
+    'restaurants': 'restaurants',
+    'register': 'register',
+    'login': 'login'
   },
   index: function() {
     App.appView.show(new App.LoadingView);
@@ -29,6 +31,12 @@ App.Router = Backbone.Router.extend({
   },
   profile: function() {
     return App.appView.show(new App.ProfileView);
+  },
+  register: function() {
+    return App.appView.show(new App.RegisterView);
+  },
+  login: function() {
+    return App.appView.show(new App.LoginView);
   },
   restaurants: function() {
     App.appView.show(new App.LoadingView);

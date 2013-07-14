@@ -334,6 +334,7 @@ you can use the generic selector below, but it's slower:
   color: #2c3e50;
 }
 .demo-browser-side {
+  color: #ffffff;
   float: left;
   padding: 22px 20px;
   width: 111px;
@@ -350,9 +351,11 @@ you can use the generic selector below, but it's slower:
   text-transform: none;
 }
 .demo-browser-author {
+  overflow: hidden;
   border: 3px solid #ffffff;
   display: block;
   height: 84px;
+  color: #ffffff;
   margin: 0 auto;
   width: 84px;
   -webkit-border-radius: 50%;
@@ -381,17 +384,28 @@ you can use the generic selector below, but it's slower:
   -webkit-font-smoothing: antialiased;
 }
 .demo-browser-content {
+  color: #ffffff;
   overflow: hidden;
   padding: 21px 0 0 20px;
   -webkit-border-radius: 0 0 6px;
   -moz-border-radius: 0 0 6px;
   border-radius: 0 0 6px;
 }
+.demo-browser-content .progress {
+  width: 400px;
+}
+.demo-browser-content .badg {
+  border: 0px;
+  padding: 3px;
+}
+.demo-browser-content .badg.disabled {
+  opacity: 0.5;
+}
 .demo-browser-content > img {
   border: 6px solid #ffffff;
   float: left;
   margin: 0 15px 20px 0;
-  width: 134px;
+  width: 110px;
 }
 body {
   color: #34495e;
@@ -2809,6 +2823,7 @@ textarea[class*="span"] {
 .tile {
   background-color: #eff0f2;
   border-radius: 6px;
+  height: 60px;
   padding: 20px;
   font-size: 30px;
   position: relative;
@@ -3837,6 +3852,7 @@ body.vjs-full-window {
 }
 #content {
   min-height: 620px;
+  background: #34495e;
 }
 .carousel {
   margin-bottom: 0px;
@@ -3881,18 +3897,20 @@ body.vjs-full-window {
 .dish .image-container img {
   width: 100%;
 }
-.dish [class^="icon-"] {
-  display: block;
-}
 .dish small {
   margin-top: 5px;
   font-size: 15px;
-  min-height: 50px;
+  height: 50px;
   min-width: 20px;
 }
 .dish .toolbar {
   height: 160px;
   background: #95a5a6;
+}
+.dish .toolbar [class^="icon-"],
+.dish .toolbar [class^="fui-"] {
+  display: block;
+  margin-bottom: 5px;
 }
 .dish .toolbar .span3 {
   width: 20%;

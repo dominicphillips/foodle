@@ -14,8 +14,10 @@ App.HomeView = App.BaseView.extend
 		_.each dishcol.models, (dish) ->
 			view = new App.DishView model : dish
 			@$el.find('.carousel-inner').append(view.render().el)
+			view.onAfterRender()
 
 		, @
 		@$el.find('.item').first().addClass('active')
+
 
 	template: App.templates['home']
