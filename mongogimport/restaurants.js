@@ -1,2 +1,2 @@
-{ "_id" : 1, "name" : "Satyam", "address" : { "street" : "Berg-am-Laim-Str. 53", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" } }
-{ "_id" : 2, "name" : "Blue Ingwer Restaurant", "address" : { "street" : "Berg-am-Laim-Straße 65", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" } }
+{ "_id" : 1, "name" : "Satyam", "address" : { "street" : "Berg-am-Laim-Str. 53", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" }, "location":{ "type": "Point", "coordinates": [11.616008, 48.131068] } }
+{ "_id" : 2, "name" : "Blue Ingwer Restaurant", "address" : { "street" : "Berg-am-Laim-Straße 65", "city" : "Munich", "state" : "Bavaria", "zip" : "81671", "country" : "Germany" }, "location":{ "type": "Point", "coordinates": [11.618182, 48.130512] } }

@@ -1,6 +1,7 @@
-from flask import Flask, render_template
-from flask import jsonify
-from pymongo import MongoClient
+from flask import Flask, render_template, jsonify, request
+from pymongo import MongoClient, GEOSPHERE
+from bson.son import SON
+import math
 
 import ConfigParser
 
@@ -17,7 +18,7 @@ mongo = MongoClient(mongodb_url)
 db = mongo.foodle
 col_dishes = db.dishes
 col_restaurants = db.restaurants
-
+col_restaurants.ensure_index([("location", GEOSPHERE)])
 
 @app.route('/')
 def index():
@@ -34,6 +35,21 @@ def retrieve_dishes():
             dish.update({'restaurant': restaurant})
             items.append(dish)
     return jsonify({'items': items})
+
+
+@app.route('/api/restaurants/')
+def retrieve_restaurants():
+    lng = request.args.get('lng')
+    lat = request.args.get('lat')
+    items = []
+    if lng is not None and lat is not None:
+        query = db.command(SON([('geoNear', 'restaurants'), ('near', [float(lng), float(lat)]), ('spherical', 'true'), ('distanceMultiplier', (6371000))]))
+        results = query['results']
+        for result in results:
+                restaurant = result['obj']
+                restaurant.update({'distance': math.ceil(result['dis'])})
+                items.append(restaurant)
+    return jsonify({"items": items})
 
 
 @app.route('/', defaults={'path': ''})
