@@ -43,6 +43,34 @@ def retrieve_dishes():
     return jsonify({'items': items})
 
 
+@app.route('/api/dishes/<int:dish_id>/')
+def retrieve_dish(dish_id):
+    dish = col_dishes.find_one({'_id': dish_id})
+    restaurant = col_restaurants.find_one({'_id': dish['restaurant']})
+    dish.update({'restaurant': restaurant})
+    return jsonify({'items': dish})
+
+
+@app.route('/api/dishes/<int:dish_id>/rate/')
+def rate_dish(dish_id):
+    user_rating = int(request.args.get('rating'))
+    if user_rating > 5:
+        user_rating = 5
+    elif user_rating < 1:
+        user_rating = 1
+    col_dishes.update({'_id': dish_id}, {'$push': {'ratings': user_rating}})
+    dish = col_dishes.find_one({'_id': dish_id})
+    dish_ratings = dish['ratings']
+    _sum = 0
+    count = len(dish_ratings) if dish_ratings else 1
+    for dish_rating in dish_ratings:
+        _sum += dish_rating
+    rating = int(round(_sum/count))
+    dish.update({'rating': rating})
+    col_dishes.update({'_id': dish_id}, {'$set': {'user_rating': rating}})
+    return jsonify({'items': dish})
+
+
 @app.route('/api/restaurants/')
 def retrieve_restaurants():
     lng = request.args.get('lng')
@@ -57,10 +85,11 @@ def retrieve_restaurants():
                 items.append(restaurant)
     return jsonify({'items': items})
 
-@app.route('/api/restaurants/<int:restaurant_id>')
+
+@app.route('/api/restaurants/<int:restaurant_id>/')
 def retrieve_restaurant(restaurant_id):
     items = []
-    restaurant = col_restaurants.find_one({'_id':restaurant_id})
+    restaurant = col_restaurants.find_one({'_id': restaurant_id})
     dishes = col_dishes.find({'restaurant': restaurant_id})
     for dish in dishes:
         items.append(dish)
