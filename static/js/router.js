@@ -2,12 +2,22 @@
 App.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
-    'profile': 'profile'
+    'profile': 'profile',
+    'restaurants': 'restaurants'
   },
   index: function() {
-    return App.appView.show(new App.HomeView);
+    return navigator.geolocation.getCurrentPosition(function(position) {
+      App.appView.show(new App.LoadingView);
+      return App.appView.show(new App.HomeView(position));
+    });
   },
   profile: function() {
     return App.appView.show(new App.ProfileView);
+  },
+  restaurants: function() {
+    return navigator.geolocation.getCurrentPosition(function(position) {
+      App.appView.show(new App.LoadingView);
+      return App.appView.show(new App.RestaurantHomeView(position));
+    });
   }
 });

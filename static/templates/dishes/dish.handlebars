@@ -1,9 +1,60 @@
-    <div class="dish">
-        <div class="image-container">
-          <img src="/static/img/bento.jpg" alt="">
-        </div>
 
+		    <div class="dish">
+        <div class="image-container">
+        	<a href="/dishes/{{_id}}">
+        		<img src="{{pic_url}}" alt="">
+        	</a>
+
+        </div>
+    	<div class="dish-navigation">
+
+    	    <span class="right pass"  href="#dishes-car" data-slide="next" ><i class="icon-angle-right"></i></span>
+    	    <span class="left pass"  href="#dishes-car" data-slide="prev"><i class="icon-angle-left"></i></span>
+    	    <p>{{name}}</p><small>with mixed Salad</small>
+
+    	</div>
         <div class="toolbar">
+        <div class="progress">
+ 		 <div class="bar" style="width: 0%;"></div>
+		</div>
+		<div class="row demo-tiles">
+
+
+		        <div class="span3">
+		          <div class="tile">
+		            <div class="fui-chat"></div>
+		            <small>5</small>
+		          </div>
+		        </div>
+
+		        <div class="span3">
+		          <div class="tile maps">
+		            <div class="fui-location"></div>
+		            <small>{{restaurant.distance}}m</small>
+		          </div>
+		        </div>
+
+		        <div class="span3">
+		          <div class="tile">
+		            <div class="icon-euro"></div>
+		            <small>{{price}}</small>
+		          </div>
+		        </div>
+
+		        <div class="span3 last">
+		          <div class="tile vote">
+		            <div class="icon-star"></div>
+		            <small>{{user_rating}}/5</small>
+		          </div>
+		        </div>
+
+
+		        </div>
+		      </div>
+
+
+
 
         </div>
     </div>
+

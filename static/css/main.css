@@ -237,7 +237,9 @@ you can use the generic selector below, but it's slower:
   margin-bottom: 12px;
 }
 .demo-tiles {
-  margin-bottom: 46px;
+  margin: 0px auto;
+  width: 400px;
+  text-align: center;
 }
 .demo-icons {
   font-size: 32px;
@@ -1911,6 +1913,7 @@ textarea[class*="span"] {
   -moz-box-shadow: none;
   box-shadow: none;
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+  background: #95a5a6;
   margin-bottom: 20px;
   position: relative;
 }
@@ -2806,19 +2809,20 @@ textarea[class*="span"] {
 .tile {
   background-color: #eff0f2;
   border-radius: 6px;
-  padding: 14px;
+  padding: 20px;
+  font-size: 30px;
   position: relative;
   text-align: center;
 }
 .tile.tile-hot:before {
   background: url(../images/tile/ribbon.png) 0 0 no-repeat;
-  background-size: 82px 82px;
+  background-size: 81px 81px;
   content: '';
-  height: 82px;
+  height: 81px;
   position: absolute;
   right: -4px;
   top: -4px;
-  width: 82px;
+  width: 81px;
 }
 .tile p {
   font-size: 15px;
@@ -2834,7 +2838,7 @@ textarea[class*="span"] {
 .tile-image.big-illustration {
   height: 111px;
   margin-top: 20px;
-  width: 112px;
+  width: 111px;
 }
 .tile-title {
   font-size: 20px;
@@ -3831,6 +3835,42 @@ body.vjs-full-window {
 .mal {
   margin-left: 20px;
 }
+#content {
+  min-height: 620px;
+}
+.carousel {
+  margin-bottom: 0px;
+}
+.accordion a {
+  text-decoration: none;
+}
+#footer {
+  position: relative;
+  color: #ffffff;
+  height: 50px;
+  background: #2c3e50;
+  overflow: hidden;
+}
+#footer #footer-trigger {
+  position: absolute;
+  font-size: 30px;
+  left: 48%;
+  top: 7px;
+}
+#footer .share-label {
+  width: 82%;
+}
+#footer ul {
+  position: relative;
+  top: 35px;
+  list-style: none;
+  padding: 15px;
+  height: 60px;
+  margin: 0px;
+}
+#footer li {
+  margin-bottom: 10px;
+}
 .dish {
   position: relative;
 }
@@ -3838,9 +3878,30 @@ body.vjs-full-window {
   max-height: 400px;
   overflow: hidden;
 }
+.dish .image-container img {
+  width: 100%;
+}
+.dish [class^="icon-"] {
+  display: block;
+}
+.dish small {
+  margin-top: 5px;
+  font-size: 15px;
+  min-height: 50px;
+  min-width: 20px;
+}
 .dish .toolbar {
-  height: 200px;
+  height: 160px;
   background: #95a5a6;
+}
+.dish .toolbar .span3 {
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.dish .toolbar .span3.last {
+  margin-right: 0px;
 }
 .dish-navigation {
   text-align: center;
@@ -3855,15 +3916,16 @@ body.vjs-full-window {
 }
 .dish-navigation p {
   margin: 0px;
+  margin-bottom: 6px;
   font-weight: normal;
 }
 .dish-navigation span {
   display: block;
   color: #95a5a6;
-  padding: 5px 20px;
+  padding: 11px 20px;
   color: #fff;
   font-size: 50px;
-  top: 2px;
+  top: 0px;
   background: #34495e;
   position: absolute;
 }
@@ -3880,10 +3942,6 @@ body {
 .navbar .container {
   padding: 0px 10px;
 }
-.navbar a:hover,
-.navbar a:focus {
-  background: #34495e;
-}
 .navbar .logo {
   position: absolute;
   left: 12px;
@@ -3894,4 +3952,19 @@ body {
 }
 .navbar .logo img {
   height: 40px;
+}
+.navbar-inverse .nav-collapse .nav > li > a:hover,
+.navbar-inverse .nav-collapse .nav > li > a:focus,
+.navbar-inverse .nav-collapse .dropdown-menu a:hover,
+.navbar-inverse .nav-collapse .dropdown-menu a:focus {
+  background-color: #2c3e50 !important;
+  color: #ffffff;
+}
+.progress {
+  background: #95a5a6;
+}
+.loader {
+  margin-top: 200px;
+  margin-left: 45%;
+  font-size: 60px;
 }

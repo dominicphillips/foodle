@@ -17,11 +17,6 @@ body {
 		padding:0px 10px;
 	}
 
-	a {
-		&:hover, &:focus {
-			background:@base;
-		}
-	}
 	.logo {
 		position: absolute;
 		left:12px;
@@ -35,5 +30,20 @@ body {
 		height:40px;
 	}
 
+}
+
+.navbar-inverse .nav-collapse .nav>li>a:hover, .navbar-inverse .nav-collapse .nav>li>a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+	background-color: @firm !important;
+	color:@inverse;
+}
+
+.progress {
+	background:@gray;
+}
+
+.loader {
+	margin-top:200px;
+	margin-left:45%;
+	font-size:60px;
 }
 

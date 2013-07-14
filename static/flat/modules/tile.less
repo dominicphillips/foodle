@@ -5,20 +5,21 @@
 .tile {
   background-color: mix(@base, @inverse, 8%);
   border-radius: 6px;
-  padding: 14px;
+  padding: 20px;
+  font-size:30px;
   position: relative;
   text-align: center;
 
   &.tile-hot {
     &:before {
       background: url(../images/tile/ribbon.png) 0 0 no-repeat;
-      background-size: 82px 82px;
+      background-size: 81px 81px;
       content: '';
-      height: 82px;
+      height: 81px;
       position: absolute;
       right: -4px;
       top: -4px;
-      width: 82px;
+      width: 81px;
     }
   }
   p {
@@ -36,7 +37,7 @@
   &.big-illustration {
     height: 111px;
     margin-top: 20px;
-    width: 112px;
+    width: 111px;
   }
 }
 .tile-title {
