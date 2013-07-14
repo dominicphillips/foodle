@@ -3968,3 +3968,30 @@ body {
   margin-left: 45%;
   font-size: 60px;
 }
+.rating {
+  font-size: 50px;
+  color: #95a5a6;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\f005";
+  color: #2c3e50;
+}
+.vote {
+  text-align: center;
+}
+.vote-img {
+  margin-bottom: 20px;
+}
+.vote-img img {
+  padding: 10px;
+  background: #2c3e50;
+  height: 200px;
+}

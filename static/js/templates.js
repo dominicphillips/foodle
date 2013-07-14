@@ -72,10 +72,21 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["App"]["templates"]["dishes/vote"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Vote</h3>\n  </div>\n  <div class=\"modal-body\">\n\n  </div>\n  <div class=\"modal-footer\">\n    <a href=\"#\" data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</a>\n  </div>";
+  buffer += "  <div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Vote</h3>\n  </div>\n  <div class=\"modal-body\">\n\n\n<div class=\"vote\">\n\n  <h2>";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h2>\n  <h3>@"
+    + escapeExpression(((stack1 = ((stack1 = depth0.restaurant),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</h3>\n      <div class=\"vote-img\">\n    <img src=\"";
+  if (stack2 = helpers.pic_url) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.pic_url; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" alt=\"\">\n  </div>\n\n  <div class=\"rating\">\n    <span class=\"icon-star\"></span>\n    <span class=\"icon-star\"></span>\n    <span class=\"icon-star\"></span>\n    <span class=\"icon-star\"></span>\n    <span class=\"icon-star\"></span>\n</div>\n\n\n</div>\n\n\n\n\n\n\n  </div>\n  <div class=\"modal-footer\">\n    <a href=\"#\" data-dismiss=\"modal\"  class=\"btn btn-primary\">Close</a>\n  </div>";
+  return buffer;
   });
 
 this["App"]["templates"]["error/404"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -140,7 +151,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.city)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\n			"
     + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.street)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n			"
+    + " <br />\n			"
     + escapeExpression(((stack1 = ((stack1 = depth0.address),stack1 == null || stack1 === false ? stack1 : stack1.zip)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\n\n		</small>\n\n		<a class=\"btn btn-danger btn-large pull-right\" href=\"/restaurants/";
   if (stack2 = helpers._id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }

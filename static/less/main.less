@@ -46,4 +46,37 @@ body {
 	margin-left:45%;
 	font-size:60px;
 }
+.rating {
+	font-size:50px;
+	color:@gray;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+	content: "\f005";
+	color: @firm;
+}
+
+.vote {
+	text-align: center;
+}
+
+.vote-img {
+	margin-bottom:20px;
+}
+
+.vote-img img{
+
+	padding:10px;
+	background:@firm;
+	height:200px;
+}
+
+
 

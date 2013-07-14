@@ -9,10 +9,14 @@ App.DishView = App.BaseView.extend({
     var $target;
     $target = $(e.currentTarget);
     if ($target.hasClass('maps')) {
-      App.appView.showModal(new App.MapsView);
+      App.appView.showModal(new App.MapsView({
+        model: this.model
+      }));
     }
     if ($target.hasClass('vote')) {
-      return App.appView.showModal(new App.VoteView);
+      return App.appView.showModal(new App.VoteView({
+        model: this.model
+      }));
     }
   },
   onAfterRender: function() {
