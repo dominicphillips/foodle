@@ -11,9 +11,9 @@ App.DishView = App.BaseView.extend
 	onClickTile : (e) ->
 		$target = $(e.currentTarget)
 		if $target.hasClass('maps')
-			App.appView.showModal(new App.MapsView)
+			App.appView.showModal(new App.MapsView model : @model)
 		if $target.hasClass('vote')
-			App.appView.showModal(new App.VoteView)
+			App.appView.showModal(new App.VoteView model : @model)
 
 
 
